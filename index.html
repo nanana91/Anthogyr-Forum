@@ -17,6 +17,10 @@
       padding: 30px 20px;
       text-align: center;
     }
+    header img {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
     h1 {
       margin: 0;
       font-size: 24px;
@@ -50,19 +54,94 @@
       border-radius: 5px;
       margin-top: 20px;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+
+    /* 모바일 최적화 스타일 */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 18px;
+      }
+      .section {
+        padding: 15px;
+      }
+      .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+      table, th, td {
+        font-size: 13px;
+      }
+      iframe {
+        height: 200px;
+      }
+    }
   </style>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9dfec954e237bf600bf4abb8d8c7037c"></script>
+  <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9dfec954e237bf600bf4abb8d8c7037c"></script>
 </head>
 <body>
   <header>
+    <img src="./Anthogyr-LogoBlock_RGB (1).jpeg" alt="Anthogyr Logo">
     <h1>Anthogyr Forum 2025</h1>
     <p>4월 5일 (금) | AC 호텔 바이 메리어트 강남</p>
   </header>
 
   <div class="section">
-    <h2 class="highlight">🎥 강연자 영상</h2>
-    <p>오승환 원장님의 웰컴 메세지가 도착했습니다.</p>
+    <p>앤서지 포럼에 관심 가져주시고 함께해 주셔서 진심으로 감사드립니다. <br>이번 포럼이 선생님의 임상에 새로운 인사이트가 되는 시간이 되시길 바랍니다.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="highlight">🎥 코스 디렉터 환영사</h2>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/nkjGk2hSH5A?si=RvCLikOY6dAqiT6L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <h2 class="highlight">📋 강의 아젠다</h2>
+    <table>
+      <tr>
+        <th>시간</th>
+        <th>내용</th>
+      </tr>
+      <tr>
+        <td>17:00 ~ 17:55</td>
+        <td>저녁식사</td>
+      </tr>
+      <tr>
+        <td>17:55 ~ 18:00</td>
+        <td>오프닝 및 연자 소개</td>
+      </tr>
+      <tr>
+        <td>18:00 ~ 18:50</td>
+        <td>Zero Bone Loss Concepts with Anthogyr X3 - Part I: Surgical concepts</td>
+      </tr>
+      <tr>
+        <td>18:50 ~ 19:00</td>
+        <td>Break</td>
+      </tr>
+      <tr>
+        <td>19:00 ~ 19:50</td>
+        <td>Zero Bone Loss Concepts with Anthogyr X3 - Part II: Prosthetic concept</td>
+      </tr>
+      <tr>
+        <td>19:50 ~ 20:00</td>
+        <td>Q&A</td>
+      </tr>
+      <tr>
+        <td>20:00 ~ 20:10</td>
+        <td>럭키드로우 및 클로징</td>
+      </tr>
+    </table>
   </div>
 
   <div class="section">
@@ -72,13 +151,13 @@
   </div>
 
   <div class="section" style="text-align:center;">
-    <a href="https://brnw.ch/..." class="btn">스트라우만 캠퍼스 둘러보기</a>
+    <a href="https://stkr-edu.com/" class="btn">스트라우만 캠퍼스 둘러보기</a>
   </div>
 
   <script>
     var container = document.getElementById('map');
     var options = {
-      center: new kakao.maps.LatLng(37.503088, 127.031203), // 테헤란로25길 10 근처 좌표
+      center: new kakao.maps.LatLng(37.503088, 127.031203),
       level: 3
     };
     var map = new kakao.maps.Map(container, options);
