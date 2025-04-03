@@ -38,9 +38,8 @@
     }
     .map {
       width: 100%;
-      height: auto;
+      height: 400px;
       margin-top: 10px;
-      text-align: center;
     }
     .btn {
       display: inline-block;
@@ -52,6 +51,7 @@
       margin-top: 20px;
     }
   </style>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9dfec954e237bf600bf4abb8d8c7037c"></script>
 </head>
 <body>
   <header>
@@ -61,22 +61,32 @@
 
   <div class="section">
     <h2 class="highlight">🎥 강연자 영상</h2>
-    <p>이번 포럼의 핵심 메시지를 미리 만나보세요!</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/_NpmAAo3YwE?si=B27DS0xQv42OMVuR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>오승환 원장님의 웰컴 메세지가 도착했습니다.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nkjGk2hSH5A?si=RvCLikOY6dAqiT6L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 
   <div class="section">
     <h2 class="highlight">📍 오시는 길</h2>
     <p>서울 강남구 테헤란로25길 10</p>
-    <div class="map">
-      <a href="https://map.kakao.com/link/map/서울 강남구 테헤란로25길 10" target="_blank" class="btn">
-        📍 카카오맵으로 길 찾기
-      </a>
-    </div>
+    <div id="map" class="map"></div>
   </div>
 
   <div class="section" style="text-align:center;">
     <a href="https://brnw.ch/..." class="btn">스트라우만 캠퍼스 둘러보기</a>
   </div>
+
+  <script>
+    var container = document.getElementById('map');
+    var options = {
+      center: new kakao.maps.LatLng(37.503088, 127.031203), // 테헤란로25길 10 근처 좌표
+      level: 3
+    };
+    var map = new kakao.maps.Map(container, options);
+
+    var marker = new kakao.maps.Marker({
+      position: new kakao.maps.LatLng(37.503088, 127.031203)
+    });
+    marker.setMap(map);
+  </script>
 </body>
 </html>
